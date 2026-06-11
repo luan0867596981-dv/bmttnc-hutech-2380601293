@@ -142,7 +142,8 @@ def playfair_encrypt():
         cipher = PlayfairCipher()
         
         # KIỂM TRA TÊN HÀM MÃ HÓA CỦA BẠN
-        encrypted_text = cipher.playfair_encrypt(text, key) 
+        matrix = cipher.create_playfair_matrix(key)
+        encrypted_text = cipher.playfair_encrypt(text, matrix) 
         
         return render_template('playfair.html', result=encrypted_text)
     except Exception as e:
@@ -158,7 +159,8 @@ def playfair_decrypt():
         cipher = PlayfairCipher()
         
         # KIỂM TRA TÊN HÀM GIẢI MÃ CỦA BẠN
-        decrypted_text = cipher.playfair_decrypt(text, key) 
+        matrix = cipher.create_playfair_matrix(key)
+        decrypted_text = cipher.playfair_decrypt(text, matrix) 
         
         return render_template('playfair.html', result=decrypted_text)
     except Exception as e:

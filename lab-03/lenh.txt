@@ -1,0 +1,13 @@
+python lab-02/ex01/api.py
+
+Mã hóa Caesar:
+python lab-03/caesar_cipher.py
+
+Mã hóa Playfair:
+python lab-03/playfair_cipher.py
+
+Mã hóa RailFence:
+python lab-03/railfence_cipher.py
+
+Mã hóa Vigenere:
+python lab-03/vigenere_cipher.py
