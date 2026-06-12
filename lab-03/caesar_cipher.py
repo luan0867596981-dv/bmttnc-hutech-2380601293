@@ -8,6 +8,11 @@ class MyApp(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        
+        # CHÈN THÊM DÒNG NÀY VÀO ĐÂY ĐỂ ĐIỀN TÊN VÀO GIAO DIỆN
+        if hasattr(self.ui, 'label_3'):
+            self.ui.label_3.setText("Nguyễn Minh Luân_2380601293")
+        
         self.ui.btn_encrypt.clicked.connect(self.call_api_encrypt)
         self.ui.btn_decrypt.clicked.connect(self.call_api_decrypt)
         

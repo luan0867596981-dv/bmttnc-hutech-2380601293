@@ -1,13 +1,21 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-from ui.playfair import Ui_MainWindow
+from ui.playfair import Ui_PlayfairMainWindow  # Sửa lại đúng tên class giao diện của bạn
 import requests
 
 class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_PlayfairMainWindow()      # Sửa lại đúng tên class giao diện của bạn
         self.ui.setupUi(self)
+        
+        # Tự động điền tên vào label_student_info dưới dòng tiêu đề
+        if hasattr(self.ui, 'label_student_info'):
+            self.ui.label_student_info.setText("Nguyễn Minh Luân_2380601293")
+            # Căn giữa chữ cho đẹp mắt
+            from PyQt5.QtCore import Qt
+            self.ui.label_student_info.setAlignment(Qt.AlignCenter)
+        
         self.ui.btn_encrypt.clicked.connect(self.call_api_encrypt)
         self.ui.btn_decrypt.clicked.connect(self.call_api_decrypt)
         self.ui.txt_key.textChanged.connect(self.call_api_create_matrix)

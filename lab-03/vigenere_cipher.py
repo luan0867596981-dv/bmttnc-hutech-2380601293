@@ -1,5 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+# Nếu file dịch ui/vigenere.py dùng class Ui_VigenereMainWindow thay vì Ui_MainWindow, 
+# bạn chỉ cần sửa lại tên class ở dòng import bên dưới cho khớp.
 from ui.vigenere import Ui_MainWindow
 import requests
 
@@ -8,6 +10,16 @@ class MyApp(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        
+        # Tự động điền tên vào giao diện Vigenere (Chấp nhận mọi cách đặt tên biến nhãn)
+        from PyQt5.QtCore import Qt
+        if hasattr(self.ui, 'label_student_info'):
+            self.ui.label_student_info.setText("Nguyễn Minh Luân_2380601293")
+            self.ui.label_student_info.setAlignment(Qt.AlignCenter)
+        elif hasattr(self.ui, 'label_3'):
+            self.ui.label_3.setText("Nguyễn Minh Luân_2380601293")
+            self.ui.label_3.setAlignment(Qt.AlignCenter)
+            
         self.ui.btn_encrypt.clicked.connect(self.call_api_encrypt)
         self.ui.btn_decrypt.clicked.connect(self.call_api_decrypt)
         

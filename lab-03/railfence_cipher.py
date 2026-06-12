@@ -8,6 +8,16 @@ class MyApp(QMainWindow):
         super().__init__()
         self.ui = Ui_RailFenceMainWindow()
         self.ui.setupUi(self)
+        
+        # Tự động điền tên vào giao diện Rail Fence (Chấp nhận cả 2 cách đặt tên label)
+        from PyQt5.QtCore import Qt
+        if hasattr(self.ui, 'label_student_info'):
+            self.ui.label_student_info.setText("Nguyễn Minh Luân_2380601293")
+            self.ui.label_student_info.setAlignment(Qt.AlignCenter)
+        elif hasattr(self.ui, 'label_3'):
+            self.ui.label_3.setText("Nguyễn Minh Luân_2380601293")
+            self.ui.label_3.setAlignment(Qt.AlignCenter)
+            
         self.ui.btn_encrypt.clicked.connect(self.call_api_encrypt)
         self.ui.btn_decrypt.clicked.connect(self.call_api_decrypt)
         

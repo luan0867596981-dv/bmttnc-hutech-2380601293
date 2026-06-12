@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\ui\playfair.ui'
+# Form implementation generated from reading ui file 'ui/playfair.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -9,23 +9,21 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
-os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'platforms'))
 
-class Ui_MainWindow(object):
+
+class Ui_PlayfairMainWindow(object):
     def setupUi(self, PlayfairMainWindow):
         PlayfairMainWindow.setObjectName("PlayfairMainWindow")
-        PlayfairMainWindow.resize(705, 550)
+        PlayfairMainWindow.resize(705, 581)
         self.centralwidget = QtWidgets.QWidget(PlayfairMainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_title = QtWidgets.QLabel(self.centralwidget)
-        self.label_title.setGeometry(QtCore.QRect(0, 10, 705, 51))
+        self.label_title.setGeometry(QtCore.QRect(200, 10, 300, 51))
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
         font.setWeight(75)
         self.label_title.setFont(font)
-        self.label_title.setAlignment(QtCore.Qt.AlignCenter)
         self.label_title.setObjectName("label_title")
         self.plain_text_label = QtWidgets.QLabel(self.centralwidget)
         self.plain_text_label.setGeometry(QtCore.QRect(20, 120, 80, 13))
@@ -37,19 +35,19 @@ class Ui_MainWindow(object):
         self.cipher_text_label.setGeometry(QtCore.QRect(20, 260, 80, 16))
         self.cipher_text_label.setObjectName("cipher_text_label")
         self.btn_encrypt = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_encrypt.setGeometry(QtCore.QRect(220, 340, 75, 23))
+        self.btn_encrypt.setGeometry(QtCore.QRect(190, 340, 75, 23))
         self.btn_encrypt.setObjectName("btn_encrypt")
         self.btn_decrypt = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_decrypt.setGeometry(QtCore.QRect(410, 340, 75, 23))
+        self.btn_decrypt.setGeometry(QtCore.QRect(400, 340, 75, 23))
         self.btn_decrypt.setObjectName("btn_decrypt")
         self.txt_plain_text = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.txt_plain_text.setGeometry(QtCore.QRect(100, 120, 505, 61))
+        self.txt_plain_text.setGeometry(QtCore.QRect(100, 120, 461, 61))
         self.txt_plain_text.setObjectName("txt_plain_text")
         self.txt_cipher_text = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.txt_cipher_text.setGeometry(QtCore.QRect(100, 260, 505, 61))
+        self.txt_cipher_text.setGeometry(QtCore.QRect(100, 260, 461, 61))
         self.txt_cipher_text.setObjectName("txt_cipher_text")
         self.txt_key = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.txt_key.setGeometry(QtCore.QRect(100, 190, 505, 41))
+        self.txt_key.setGeometry(QtCore.QRect(100, 190, 461, 41))
         self.txt_key.setObjectName("txt_key")
         self.label_student_info = QtWidgets.QLabel(self.centralwidget)
         self.label_student_info.setGeometry(QtCore.QRect(150, 60, 351, 51))
@@ -58,12 +56,13 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_student_info.setFont(font)
+        self.label_student_info.setText("")
         self.label_student_info.setObjectName("label_student_info")
         self.label_matrix = QtWidgets.QLabel(self.centralwidget)
         self.label_matrix.setGeometry(QtCore.QRect(20, 390, 80, 16))
         self.label_matrix.setObjectName("label_matrix")
         self.txt_playfair_matrix = QtWidgets.QTextEdit(self.centralwidget)
-        self.txt_playfair_matrix.setGeometry(QtCore.QRect(100, 390, 505, 120))
+        self.txt_playfair_matrix.setGeometry(QtCore.QRect(100, 390, 461, 120))
         self.txt_playfair_matrix.setReadOnly(True)
         self.txt_playfair_matrix.setObjectName("txt_playfair_matrix")
         PlayfairMainWindow.setCentralWidget(self.centralwidget)
@@ -87,7 +86,6 @@ class Ui_MainWindow(object):
         self.cipher_text_label.setText(_translate("PlayfairMainWindow", "Cipher text:"))
         self.btn_encrypt.setText(_translate("PlayfairMainWindow", "Encrypt"))
         self.btn_decrypt.setText(_translate("PlayfairMainWindow", "Decrypt"))
-        self.label_student_info.setText(_translate("PlayfairMainWindow", ""))
         self.label_matrix.setText(_translate("PlayfairMainWindow", "Playfair Matrix:"))
 
 
@@ -95,7 +93,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     PlayfairMainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_PlayfairMainWindow()
     ui.setupUi(PlayfairMainWindow)
     PlayfairMainWindow.show()
     sys.exit(app.exec_())
